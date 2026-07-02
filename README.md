@@ -1,51 +1,69 @@
 Project Name: BloodDonationMVC
 
-Project Description: BloodDonationMVC is a web-based Blood Donation Management System developed as an academic project using MVC architecture. The system helps users to register as blood donors and allows others to search for donors based on blood group and city. The project demonstrates the use of JSP, Servlets, JDBC, and MySQL for building a simple and efficient backend-driven web application.
+Description
+BloodDonationMVC is a simple web-based Blood Donation Management System built as an academic project using the MVC pattern. It demonstrates JSP, Servlets, JDBC, and MySQL to provide donor registration, user authentication, and donor search by blood group and city.
 
-Technologies Used: Frontend:
+Technologies
+- Frontend: HTML, JSP, CSS
+- Backend: Java (Servlets, JDBC)
+- Database: MySQL
+- Server: Apache Tomcat
+- IDE: NetBeans
 
-HTML
-JSP
-CSS
-Backend:
+Project Structure (quick)
+- `src/` — Java source code (controller, model, dto, db)
+- `web/` — HTML/JSP pages, `WEB-INF` and `META-INF` configuration
+- `images/` — static image assets used by the site (logos, banners, placeholders)
+- `lib/` — third-party libraries (e.g. MySQL connector)
+- `database/` — SQL dump: `blooddonation.sql`
 
-Java (Servlets, JDBC)
-Database:
+Main Features
+- Donor registration and profile storage
+- User login and session handling
+- Search donors by blood group and city
+- Simple MVC separation of concerns
 
-MySQL
-Server:
+Using the `images/` folder
+- Add or replace site images in the `images/` folder.
+- Reference images from your HTML/JSP using relative paths, for example:
 
-Apache Tomcat
-IDE:
+```html
+<img src="images/logo.png" alt="Site logo">
+```
 
-NetBeans
-Project Structure:
+If your pages are served from the web root (the `web/` folder in this project), the path above works as-is. If you move files, adjust the relative path accordingly.
 
-src/ : Java source code (Controller, Model, DTO, DB)
-WebContent/ : JSP pages and configuration files
-database/ : MySQL database file (blooddonation.sql)
-lib/ : MySQL Connector JAR
-README.txt : Project documentation
-Main Features:
+How to run (quick)
+1. Install JDK (recommended 17+)
+2. Install and start MySQL and import `database/blooddonation.sql`
+3. Configure database credentials in `src/java/db/DBConnector.java`
+4. Deploy the project to Apache Tomcat (or import into NetBeans and Run)
+5. Open the site root (e.g., `index.html` or `login.jsp`) in a browser
 
-Donor Registration
-User Login
-Search Blood Donors by Blood Group and City
-MVC Architecture Implementation
-Database Connectivity using JDBC
-How to Run the Project:
+Database
+- Database name (example): `blood_donation`
+- Main table: `donors`
 
-Install JDK (Version 17 or above)
-Install Apache Tomcat Server
-Import the project into NetBeans
-Import the database using blooddonation.sql
-Configure MySQL username and password in DBConnector.java
-Run the project on Tomcat server
-Open index.html in browser
-Database Information: Database Name: blood_donation Table Name: donors
+Screenshots
+- Home page
 
-Note: This project is developed purely for academic learning purposes and demonstrates basic CRUD and MVC concepts.
-Static preview vs JSP backend:
-- For Netlify or direct browser preview, open/deploy the files in web/ that end with .html. These are static pages and will navigate normally.
-- The .jsp pages, LoginServlet, RegisterServlet, FindBloodServlet, and MySQL features require Apache Tomcat. Netlify cannot run JSP/Servlet Java apps.
-- For the full app, run the project on Tomcat and open the Tomcat URL, for example http://localhost:8080/BloodDonationMVC/.
+![Home page](images/home.png)
+- Login page
+
+![Login page](images/login.png)
+- Registration page
+
+![Registration page](images/register.png)
+- Find donors
+
+![Find donors](images/findblood.png)
+- User profile
+
+![Profile](images/profile.png)
+- About page
+
+![About](images/about.png)
+
+Notes
+This repository is for academic purposes and demonstrates basic CRUD, authentication, and MVC concepts. 
+  
